@@ -1,4 +1,4 @@
-## iphone message clone
+## iphone clone
 ## 개요
 - 그냥 재미로 진행
   
