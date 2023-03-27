@@ -1,17 +1,30 @@
 import { ReactNode } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Header, MessageApp } from "./apps";
+import { RouterProvider } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { Header } from "./apps";
+import { flashlightState } from "./recoil/atom";
 import router from "./router";
 
 interface BoardProps {
   children: ReactNode;
 }
 
-const Board = ({ children }: BoardProps) => (
-  <div className="flex justify-center items-center h-[750px] w-[350px] relative bg-black rounded-[60px] border-solid border-[3px] border-zinc-700">
-    {children}
-  </div>
-);
+const Board = ({ children }: BoardProps) => {
+  const flashOn = useRecoilValue(flashlightState);
+
+  return (
+    <div
+      className="flex justify-center items-center h-[750px] w-[350px] relative bg-black rounded-[60px] border-solid border-[3px] border-zinc-700"
+      style={{
+        boxShadow: flashOn
+          ? "0 0px 100px rgba(255,255,0,1), 0 0px 0px rgba(255,255,0,1)"
+          : "",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const PowerBtn = () => (
   <div className="h-[90px] w-[5px] bg-black absolute right-[-6px] top-[210px]" />

@@ -20,7 +20,7 @@ const Battery = () => {
           />
         </div>
       </div>
-      <div className="relative left-[1px] bg-gray-400 w-[2px] h-[4px] rounded-tr-[3px] rounded-br-[3px]" />
+      <div className="relative left-[1px] bg-gray-400 w-[2px] h-[4px] rounded-r-[3px]" />
     </>
   );
 };

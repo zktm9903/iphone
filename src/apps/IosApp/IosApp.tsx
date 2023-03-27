@@ -1,12 +1,4 @@
-import Time from "./components/ios/Time";
-
-const LockScreen = () => {
-  return (
-    <div className="absolute w-full h-full">
-      <Time />
-    </div>
-  );
-};
+import LockScreen from "./components/ios/LockScreen";
 
 const IosApp = () => {
   const imageURL =
@@ -18,7 +10,9 @@ const IosApp = () => {
         backgroundImage: `url(${imageURL})`,
         backgroundSize: "cover",
       }}
-    ></div>
+    >
+      <LockScreen />
+    </div>
   );
 };
 

@@ -1,10 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { IosApp, MessageApp, MusicApp } from "./Apps";
+import { CameraApp, IosApp, MessageApp, MusicApp } from "./apps";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <IosApp />,
+  },
+  {
+    path: "/camera",
+    element: <CameraApp />,
   },
   {
     path: "/message",
