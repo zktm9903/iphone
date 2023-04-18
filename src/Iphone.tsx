@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import { RouterProvider } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { Header } from "./apps";
 import { flashlightState } from "./recoil/atom";
-import router from "./router";
+import Router from "./Router";
 
 interface BoardProps {
   children: ReactNode;
@@ -61,7 +60,7 @@ const Iphone = () => {
         <Header />
         <DynamicIsland />
         <Display>
-          <RouterProvider router={router} />
+          <Router />
         </Display>
       </Board>
     </div>

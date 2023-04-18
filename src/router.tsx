@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CameraApp, IosApp, MessageApp, MusicApp } from "./apps";
 
 const router = createBrowserRouter([
@@ -20,4 +20,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+const Router = () => <RouterProvider router={router} />;
+
+export default Router;

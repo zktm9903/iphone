@@ -5,6 +5,8 @@ import {
   Time,
 } from "./components/header";
 
+const Spacer = () => <div className="w-[5px]" />;
+
 const Header = () => {
   return (
     <div className="h-[30px] w-[300px] absolute top-[16px]">
@@ -13,9 +15,9 @@ const Header = () => {
       </div>
       <div className="flex justify-center items-center absolute w-[100px] h-[30px] right-0">
         <CommunicationStatus />
-        <div className="w-[4px]" />
+        <Spacer />
         <Bandwidth />
-        <div className="w-[4px]" />
+        <Spacer />
         <Battery />
       </div>
     </div>
