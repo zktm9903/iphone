@@ -10,7 +10,7 @@ const Time = () => {
     }, 1000);
   }, []);
 
-  return <p className="text-sm font-semibold text-white">{time}</p>;
+  return <p className="text-sm font-semibold text-white">KT</p>;
 };
 
 export default Time;

@@ -1,10 +1,17 @@
+import { useState } from "react";
+
 interface ShootBtnProps {
   capture: () => void;
   setFlicker: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ShootBtn = ({ capture, setFlicker }: ShootBtnProps) => {
+  const [click, setClick] = useState(false);
   const delayCapture = () => {
+    setClick(true);
+    setTimeout(() => {
+      setClick(false);
+    }, 300);
     setFlicker(true);
     setTimeout(() => {
       setFlicker(false);
@@ -20,8 +27,8 @@ const ShootBtn = ({ capture, setFlicker }: ShootBtnProps) => {
       onClick={delayCapture}
     >
       <div
-        className="w-[55px] h-[55px] bg-white rounded-[50%] border-[2px] border-black"
-        style={{ borderWidth: "4px" }}
+        className="w-[55px] h-[55px] bg-white rounded-[50%] border-[2px] border-black duration-300"
+        style={{ borderWidth: click ? "4px" : "2px" }}
       />
     </div>
   );
