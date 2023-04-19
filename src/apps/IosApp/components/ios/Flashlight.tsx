@@ -11,7 +11,10 @@ const Flashlight = () => {
       whileHover={{ scale: 1.2 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       style={{ filter: on ? "invert(100%)" : "invert(0%)" }}
-      onClick={() => setOn((e) => !e)}
+      onClick={(event) => {
+        event.stopPropagation();
+        setOn((e) => !e);
+      }}
     >
       <div className="absolute top-[10px] w-[15px] h-[3px] bg-white rounded-[1px]" />
       <div className="absolute top-[14px] w-[15px] h-[10px] bg-white rounded-[1px] rounded-b-[20px]" />

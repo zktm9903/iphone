@@ -42,7 +42,7 @@ const VolumeDownBtn = () => (
 );
 
 const DynamicIsland = () => (
-  <div className="h-[30px] w-[100px] bg-black absolute top-[16px] rounded-[60px]" />
+  <div className="h-[30px] w-[100px] bg-black absolute top-[16px] rounded-[60px] z-[100]" />
 );
 
 const Display = ({ children }: BoardProps) => (

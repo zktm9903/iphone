@@ -9,7 +9,8 @@ const Camera = () => {
       whileHover={{ scale: 1.2 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       style={{}}
-      onClick={() => {
+      onClick={(event) => {
+        event.stopPropagation();
         navigate("./camera");
       }}
     >
