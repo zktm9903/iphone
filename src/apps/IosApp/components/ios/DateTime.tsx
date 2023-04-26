@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import "moment/dist/locale/ko";
@@ -14,10 +15,15 @@ const DateTime = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center absolute top-[11%] w-[200px] h-[100px]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="flex flex-col justify-center items-center absolute top-[11%] w-[200px] h-[100px]"
+    >
       <p className="text-white text-lg">{date}</p>
       <p className="text-white text-7xl font-semibold">{time}</p>
-    </div>
+    </motion.div>
   );
 };
 

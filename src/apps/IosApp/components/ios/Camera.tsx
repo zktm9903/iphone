@@ -7,11 +7,16 @@ const Camera = () => {
     <motion.div
       className="flex flex-col justify-center items-center absolute right-[40px] bottom-[40px] w-[50px] h-[50px] rounded-[50%] bg-black"
       whileHover={{ scale: 1.2 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       style={{}}
       onClick={(event) => {
         event.stopPropagation();
-        navigate("./camera");
+        setTimeout(() => {
+          navigate("./camera");
+        }, 500);
       }}
     >
       <div className="absolute top-[14px] w-[10px] h-[5px] bg-white rounded-[1px]" />
