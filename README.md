@@ -6,4 +6,4 @@
 - 폴더 구조가 마음에 안듬
 
 ## 시연
-- https://youtube.com/shorts/bTcxKieCcI4?feature=share
+- https://zktm9903.github.io/
