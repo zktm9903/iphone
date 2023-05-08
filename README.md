@@ -1,8 +1,7 @@
 ## iphone clone (진행 중)
 
 ## 배포
-- https://zktm9903.github.io/
-
+- https://zktm9903.github.io/iphone/
 ## 스택
 - typescript, react, tailwind
 - recoil, react-framer-motion, react-router, moment, react-webcam
