@@ -10,12 +10,22 @@ export const albumState = atom<string[]>({
   default: [],
 });
 
-export const isCarrierState = atom({
-  key: "isCarrierState",
+export const needCarrierState = atom({
+  key: "needCarrierState",
+  default: true,
+});
+
+export const needPwState = atom({
+  key: "needPwState",
   default: true,
 });
 
 export const onPasswordScreenState = atom({
   key: "onPasswordScreenState",
+  default: false,
+});
+
+export const hideTimeFlashCameraState = atom({
+  key: "hideTimeFlashCameraState",
   default: false,
 });

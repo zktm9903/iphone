@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 import { Header } from "./apps";
 import { flashlightState } from "./recoil/atom";
-import Router from "./Router";
+import Router from "./router";
 
 interface BoardProps {
   children: ReactNode;
@@ -45,9 +45,23 @@ const DynamicIsland = () => (
   <div className="h-[30px] w-[100px] bg-black absolute top-[16px] rounded-[60px] z-[100]" />
 );
 
-const Display = ({ children }: BoardProps) => (
-  <div className="h-[725px] w-[325px] rounded-[50px]">{children}</div>
-);
+const Display = ({ children }: BoardProps) => {
+  const imageURL =
+    // "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcJmWkI%2Fbtr7CUzVC8c%2FhCK74VmbFUYQlEeDRUXPQK%2Fimg.jpg";
+    "https://images.unsplash.com/photo-1546349851-64285be8e9fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80";
+  return (
+    <div
+      className="h-[725px] w-[325px] rounded-[50px]"
+      style={{
+        backgroundImage: `url(${imageURL})`,
+        backgroundSize: "cover",
+        filter: "blur(0px)",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Iphone = () => {
   return (

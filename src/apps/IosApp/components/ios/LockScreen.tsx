@@ -1,23 +1,30 @@
 import { AnimatePresence } from "framer-motion";
 import { useRecoilState } from "recoil";
-import { onPasswordScreenState } from "../../../../recoil/atom";
+import {
+  hideTimeFlashCameraState,
+  onPasswordScreenState,
+} from "../../../../recoil/atom";
 import Camera from "./Camera";
 import DateTime from "./DateTime";
 import Flashlight from "./Flashlight";
 import PasswordScreen from "./PasswordScreen";
 
 const LockScreen = () => {
-  const [needPW, setNeedPw] = useRecoilState(onPasswordScreenState);
+  const [onPwScreen, setOnPwScreen] = useRecoilState(onPasswordScreenState);
+  const [hide, setHide] = useRecoilState(hideTimeFlashCameraState);
 
   return (
     <div
       className="flex justify-center relative w-full h-full"
-      onClick={() => setNeedPw(true)}
+      onClick={() => {
+        setHide(true);
+        setOnPwScreen(true);
+      }}
     >
-      <AnimatePresence>{needPW || <DateTime />}</AnimatePresence>
-      <AnimatePresence>{needPW || <Flashlight />}</AnimatePresence>
-      <AnimatePresence>{needPW || <Camera />}</AnimatePresence>
-      <AnimatePresence>{needPW && <PasswordScreen />}</AnimatePresence>
+      <AnimatePresence>{hide || <DateTime />}</AnimatePresence>
+      <AnimatePresence>{hide || <Flashlight />}</AnimatePresence>
+      <AnimatePresence>{hide || <Camera />}</AnimatePresence>
+      <AnimatePresence>{onPwScreen && <PasswordScreen />}</AnimatePresence>
     </div>
   );
 };

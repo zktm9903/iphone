@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil";
-import { isCarrierState } from "../../recoil/atom";
+import { needCarrierState } from "../../recoil/atom";
 import {
   Bandwidth,
   Battery,
@@ -11,7 +11,7 @@ import {
 const Spacer = () => <div className="w-[5px]" />;
 
 const Header = () => {
-  const needCarrier = useRecoilValue(isCarrierState);
+  const needCarrier = useRecoilValue(needCarrierState);
   return (
     <div className="h-[30px] w-[300px] absolute top-[16px] z-[20]">
       <div className="flex justify-center items-center absolute w-[100px] h-[30px] left-0">

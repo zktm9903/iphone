@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { onPasswordScreenState } from "../../../../recoil/atom";
+import {
+  needCarrierState,
+  needPwState,
+  onPasswordScreenState,
+} from "../../../../recoil/atom";
 
 interface PwViewProps {
   pw: string;
@@ -92,12 +96,26 @@ const CancelBtn = ({ pw, setPw }: CancelBtn) => {
 
 const PasswordScreen = () => {
   const [pw, setPw] = useState("");
+  const setPasswordScreen = useSetRecoilState(onPasswordScreenState);
+  const setNeedPw = useSetRecoilState(needPwState);
+  const setNeedCarrier = useSetRecoilState(needCarrierState);
+
+  useEffect(() => {
+    if (pw.length < 4) return;
+
+    setPasswordScreen(false);
+    setTimeout(() => {
+      setNeedPw(false);
+    }, 600);
+    setNeedCarrier(false);
+  }, [pw]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
-      className="h-full w-full relative flex justify-center rounded-[50px] z-10 bg-[rgba(0,0,0,0.5)]"
+      className="h-full w-full relative flex justify-center rounded-[50px] z-10 bg-[rgba(0,0,0,0.7)]"
     >
       <PwView pw={pw} />
       <PwButtons setPw={setPw} />
