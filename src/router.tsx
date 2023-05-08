@@ -1,24 +1,29 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CameraApp, IosApp, MessageApp, MusicApp } from "./apps";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <IosApp />,
+    },
+    {
+      path: "/camera",
+      element: <CameraApp />,
+    },
+    {
+      path: "/message",
+      element: <MessageApp />,
+    },
+    {
+      path: "/music",
+      element: <MusicApp />,
+    },
+  ],
   {
-    path: "/iphone",
-    element: <IosApp />,
-  },
-  {
-    path: "/iphone/camera",
-    element: <CameraApp />,
-  },
-  {
-    path: "/iphone/message",
-    element: <MessageApp />,
-  },
-  {
-    path: "/iphone/music",
-    element: <MusicApp />,
-  },
-]);
+    basename: "/iphone",
+  }
+);
 
 const Router = () => <RouterProvider router={router} />;
 
