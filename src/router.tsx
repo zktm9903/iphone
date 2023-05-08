@@ -3,19 +3,19 @@ import { CameraApp, IosApp, MessageApp, MusicApp } from "./apps";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/iphone",
     element: <IosApp />,
   },
   {
-    path: "/camera",
+    path: "/iphone/camera",
     element: <CameraApp />,
   },
   {
-    path: "/message",
+    path: "/iphone/message",
     element: <MessageApp />,
   },
   {
-    path: "/music",
+    path: "/iphone/music",
     element: <MusicApp />,
   },
 ]);
