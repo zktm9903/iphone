@@ -2,9 +2,13 @@
 
 ## 배포
 - https://zktm9903.github.io/iphone/
+
 ## 스택
-- typescript, react, tailwind
-- recoil, react-framer-motion, react-router, moment, react-webcam
+- 코어 : React, Typescript
+- 상태관리 : Recoil
+- 스타일링 : Tailwind
+- 패키지 매니저 : NPM
+- 빌드 : vite
 
 ## 로그
 - 짬날때 진행 중
