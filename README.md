@@ -19,4 +19,5 @@
   - 이유 : react-framer-motion을 통해 애니메이션을 구현 중인데 화면 밖에서 이동하는 게 보임
   - 해결책 : 아이폰 외관을 전부 배경은 투명하고 색이 있는 테두리가 있는 div로 구현하고 디스플레이 부분을 젤 뒤로 뺀다. 즉 눈에 보이는 외관들이 전부 div의 테두리가 되어야함
 
-
+## 미리보기
+![미리보기](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEcKCr%2FbtsjnHgNbLT%2FcKAmP9MKmUK1TXkDS4KkOk%2Fimg.png)
